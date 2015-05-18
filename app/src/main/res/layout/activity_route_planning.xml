@@ -1,96 +1,154 @@
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:gravity="center_horizontal"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" tools:context=".RoutePlanning"
+    android:weightSum="1"
+    android:fontFamily="sans-serif-light"
     android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:background="#ececec">
 
-    <TableLayout
+    <!-- Login progress -->
+
+    <ProgressBar android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.33"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"/>
+    <ScrollView android:id="@+id/route_form" android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_weight="0.9">
+
+        <LinearLayout android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <AutoCompleteTextView xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/choose_start"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Start Route"
+                    android:layout_marginTop="20dp"
+                    />
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Button android:text="Button"
+                    android:id="@+id/button1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp" />
+
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <AutoCompleteTextView xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/choose_end"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="End Route"
+                    android:layout_marginTop="20dp"
+                    />
+                <Spinner
+                    android:id="@+id/spinner2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Button android:text="Button"
+                    android:id="@+id/button2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp" />
+
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:weightSum="1">
+
+                    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/difficulty"
+                        android:layout_width="253dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Sort by Difficulty"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="0.97" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/checkBox"
+                        android:layout_gravity="bottom" />
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/spinner_dif"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+                <Button android:text="Button"
+                    android:id="@+id/button3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:id="@+id/rangeBarLayout"
+        android:layout_weight="0.1">
 
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_margin="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Hello World."
-                android:id="@+id/textView" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/radioButton2"
-                android:layout_marginLeft="180dp" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_margin="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Hello World."
-                android:id="@+id/textView3" />
-
-            <CalendarView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/calendarView"
-                android:layout_column="1" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_margin="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Hello World."
-                android:id="@+id/textView2" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/radioButton3" />
-        </TableRow>
-    </TableLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp">
-
-        <Button
-            android:layout_width="wrap_content"
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/select_route_distance"
+            android:layout_width="253dp"
             android:layout_height="wrap_content"
-            android:text="Hello World."
-            android:id="@+id/button" />
+            android:hint="@string/select_route_distance"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="0.97" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World."
-            android:id="@+id/button2" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World."
-            android:id="@+id/button3" />
     </LinearLayout>
+
+    <Button android:id="@+id/plan_route_button" style="?android:textAppearanceSmall"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/action_route_planning"
+        android:textStyle="bold"
+        android:background="#BFDE3E"
+        android:layout_gravity="center_horizontal"/>
+
 </LinearLayout>
+
+
+
